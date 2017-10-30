@@ -9,7 +9,7 @@
     (queimado ?loc)
     (consertado ?loc)
     (escada)
-    (lampada ?lamp)
+    (lampada)
   )
   (:action moversala
     :parameters (?loc1 ?loc2)
@@ -33,12 +33,17 @@
   )
   (:action trocarlampada
     :parameters (?loc1)
-    :precondition (and (em ?loc1) (sala ?loc1) (queimado ?loc1) (escada))
-    :effect (and (consertado ?loc1) (not (queimado ?loc1)))
+    :precondition (and (em ?loc1) (sala ?loc1) (queimado ?loc1) (escada) (lampada))
+    :effect (and (consertado ?loc1) (not (queimado ?loc1)) (not(lampada)))
   )
   (:action pegarescada
     :parameters (?loc1)
     :precondition (and (em ?loc1) (deposito ?loc1) (not (escada)))
     :effect (and (escada))
+  )
+  (:action pegarlampada
+    :parameters (?loc1)
+    :precondition (and (em ?loc1) (deposito ?loc1) (not (lampada)))
+    :effect (and (lampada))
   )
 )
