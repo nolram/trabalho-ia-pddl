@@ -12,7 +12,8 @@
 ; Para acessar o depósito e as salas ele precisa estar no corredor
 ; Para substituir as lampadas queimadas ele precisa subir na escada e para sair da sala ele precisa descer da escada
 ; Na nossa implementação supomos que o agente precisa pegar uma lâmpada de cada vez no depósito
-; 
+; Utilizamos o javagp.jar para executar os arquivos
+
 (define (domain trocalampada)
   (:requirements :strips :negative-preconditions)
   (:predicates
@@ -21,7 +22,7 @@
     (corredor ?loc)
     (deposito ?loc)
     (queimado ?loc)
-    (consertado ?loc)
+    (funcionando ?loc)
     (escada)
     (lampada)
     (naescada)
@@ -59,7 +60,7 @@
   (:action trocarlampada
     :parameters (?loc1)
     :precondition (and (em ?loc1) (sala ?loc1) (queimado ?loc1) (escada) (naescada) (lampada))
-    :effect (and (consertado ?loc1) (not (queimado ?loc1)) (not(lampada)))
+    :effect (and (funcionando ?loc1) (not (queimado ?loc1)) (not(lampada)))
   )
   (:action pegarescada
     :parameters (?loc1)

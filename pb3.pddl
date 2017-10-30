@@ -7,31 +7,25 @@
 ; Profa.: Dra. Sílvia Maria Wanderley Moraes
 
 ; Arquivo PDDL de problema do Trabalho de Inteligência Artificial
-; Neste problema supõem-se que todas as lâmpadas das 4 salas estão queimadas
-; A posição inicial do Agente é no corredor1
+; Neste problema supõem-se que apenas a lampada da sala1 esta queimada e existem somente 2 salas (sala1 e sala2)
+; A posição inicial do Agente é na sala2
 ; O objetivo é que todas as lâmpadas estejam funcionando
 
-(define (problem todasqueimadas)
+(define (problem pb3)
   (:domain trocalampada)
   (:requirements :strips)
-  (:objects sala1 sala2 sala3 sala4 corredor1 deposito1)
+  (:objects sala1 sala2 corredor1 deposito1)
   (:init
-      (em corredor1)
+      (em sala2)
       (queimado sala1)
-      (queimado sala2)
-      (queimado sala3)
-      (queimado sala4)
+      (funcionando sala2)
       (sala sala1)
       (sala sala2)
-      (sala sala3)
-      (sala sala4)
       (corredor corredor1)
       (deposito deposito1)
   )
   (:goal (and (funcionando sala1)
     (funcionando sala2)
-    (funcionando sala3)
-    (funcionando sala4)
     )
   )
 )
