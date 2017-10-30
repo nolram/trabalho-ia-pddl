@@ -1,3 +1,13 @@
+; Trabalho de Inteligência Artificial
+
+; Alunos:
+; Marlon Baptista de Quadros
+; Eurico Saldanha
+
+; Profa.: Dra. Sílvia Maria Wanderley Moraes
+
+; Arquivo PDDL de problema do Trabalho de Inteligência Artificial
+; Neste problema supõem que todas as lâmpadas das 4 salas estão queimadas
 (define (problem todasqueimadas)
   (:domain trocalampada)
   (:requirements :strips)
@@ -17,8 +27,8 @@
   )
   (:goal (and (consertado sala1)
     (consertado sala2)
-    ;(consertado sala3)
-    ;(consertado sala4)
+    (consertado sala3)
+    (consertado sala4)
     )
   )
 )
