@@ -13,7 +13,7 @@
 ; Para substituir as lampadas queimadas ele precisa subir na escada e para sair da sala ele precisa descer da escada
 ; Na nossa implementação supomos que o agente precisa pegar uma lâmpada de cada vez no depósito
 ; Utilizamos o javagp.jar para executar os arquivos
-
+; Código fonte: https://github.com/pucrs-cc-marlon/trabalho-ia-pddl
 (define (domain trocalampada)
   (:requirements :strips :negative-preconditions)
   (:predicates
